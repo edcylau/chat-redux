@@ -4,4 +4,21 @@ body {
 .app {
   margin-top: 20px;
   margin-bottom: 20px;
+  display: flex;
+  .lw-col {
+    width: 5%;
+    border-right: 1px solid #fff;
+  }
+  .channel-list{
+    width: 25%;
+    border-right: 1px solid #fff;
+  }
+  .message-list {
+    width: 70%;
+    .message {
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+  }
 }
+
