@@ -6,7 +6,7 @@ class Message extends Component {
     return (
       <div className="message">
         <div className="title">
-          <div className="name">{this.props.message.author}</div>
+          <div className="name">{this.props.message.author} </div>
           <div className="timestamp">{this.props.message.created_at}</div>
         </div>
         <div className="content">

@@ -15,7 +15,7 @@ class MessageForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    this.props.createMessage('general', 'john', this.state.value);
+    this.props.createMessage('general', this.props.username, this.state.value);
     this.setState({ value: "" });
   }
 
@@ -32,6 +32,10 @@ class MessageForm extends Component {
   }
 }
 
+function mapStateToProps(state) {
+  return { username: state.username };
+}
+
 function mapDispatchToProps(dispatch) {
   return bindActionCreators(
     { createMessage: createMessage },
@@ -39,4 +43,4 @@ function mapDispatchToProps(dispatch) {
   );
 }
 
-export default connect(null, mapDispatchToProps)(MessageForm);
+export default connect(mapStateToProps, mapDispatchToProps)(MessageForm);
